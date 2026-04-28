@@ -1,0 +1,23 @@
+import PhotoCards from '@/components/PhotoCards';
+import React from 'react';
+
+const AllPhotosPage = async() => {
+     const res = await fetch('https://project-on-pix-gen-image-generator.vercel.app/lib/data.json')
+    const photos = await res.json()
+    console.log(photos);
+
+    return (
+        <div>
+            <h1 className='text-2xl font-bold m-4'>All Photos</h1>
+            <div className='grid grid-cols-4 gap-5'>
+                {
+                    photos.map(photo => <PhotoCards key={photo.id} photo={photo}>
+                        
+                    </PhotoCards>)
+                }
+            </div>
+        </div>
+    );
+};
+
+export default AllPhotosPage;
