@@ -2,7 +2,7 @@ import React from 'react';
 import PhotoCards from '../PhotoCards';
 
 const TopGenerations = async() => {
-    const res = await fetch('https://project-on-pix-gen-image-generator.vercel.app/lib/data.json')
+    const res = await fetch('https://project-on-pix-gen-image-generator.vercel.app/data.json')
     const photos = await res.json()
     console.log(photos);
 
