@@ -7,10 +7,11 @@ import { FaHeart } from 'react-icons/fa';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 
 const PhotoDetailsPage =async ({params}) => {
-    const {id} = await params;
+    const {id} = params;
     console.log(id,"params id");
 
     const res = await fetch('https://project-on-pix-gen-image-generator.vercel.app/data.json')
+    
     const photos = await res.json()
     console.log(photos,"Photo info by data fetching");
 
