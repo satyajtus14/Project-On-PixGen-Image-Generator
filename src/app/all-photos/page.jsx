@@ -1,10 +1,10 @@
 import PhotoCards from '@/components/PhotoCards';
 import React from 'react';
+import { getAllPhotosData } from '../../../util/dataFetching';
+
 
 const AllPhotosPage = async() => {
-     const res = await fetch('https://project-on-pix-gen-image-generator.vercel.app/data.json')
-    const photos = await res.json()
-    console.log(photos);
+   const photos = await getAllPhotosData();
 
     return (
         <div>

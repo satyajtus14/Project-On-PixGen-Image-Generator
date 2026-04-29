@@ -1,9 +1,11 @@
 import React from 'react';
 import PhotoCards from '../PhotoCards';
+import { getAllPhotosData } from '../../../util/dataFetching';
+
 
 const TopGenerations = async() => {
-    const res = await fetch('https://project-on-pix-gen-image-generator.vercel.app/data.json')
-    const photos = await res.json()
+    // const res = await fetch('https://project-on-pix-gen-image-generator.vercel.app/data.json')
+    const photos = await getAllPhotosData();
     console.log(photos);
 
     const topPhotos = photos.slice(0,8)

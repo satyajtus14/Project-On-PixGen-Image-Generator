@@ -5,14 +5,16 @@ import React from 'react';
 import { BiDownload } from 'react-icons/bi';
 import { FaHeart } from 'react-icons/fa';
 import { FaArrowLeftLong } from 'react-icons/fa6';
+import { getAllPhotosData } from '../../../../util/dataFetching';
+
 
 const PhotoDetailsPage =async ({params}) => {
-    const {id} = params;
+    const {id} = await params;
     console.log(id,"params id");
 
-    const res = await fetch('https://project-on-pix-gen-image-generator.vercel.app/data.json')
+    const photos = await getAllPhotosData();
     
-    const photos = await res.json()
+    // const photos = await res.json()
     console.log(photos,"Photo info by data fetching");
 
     const photo = photos.find(p=>p.id == id)
