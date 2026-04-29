@@ -10,7 +10,7 @@ const PhotoDetailsPage =async ({params}) => {
     const {id} = await params;
     console.log(id,"params id");
 
-    const res = await fetch('https://project-on-pix-gen-image-generator.vercel.app/lib/data.json')
+    const res = await fetch('https://project-on-pix-gen-image-generator.vercel.app/data.json')
     const photos = await res.json()
     console.log(photos,"Photo info by data fetching");
 
