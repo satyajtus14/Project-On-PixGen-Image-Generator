@@ -3,8 +3,8 @@ import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 
 
-const client = new MongoClient("mongodb://localhost:27017/database");
-const db = client.db("PIXGEN-DB");
+const client = new MongoClient(process.env.MONGO_URL);
+const db = client.db("GENPIX-DB");
 
 export const auth = betterAuth({
   database: mongodbAdapter(db, {
